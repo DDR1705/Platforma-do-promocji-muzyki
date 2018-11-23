@@ -16,7 +16,9 @@ namespace Platforma.Controllers
             return View(movie);
         }
 
-        public ActionResult Edit(int id)
+        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]  //Reguła routingu pisana w nowy sposób
+
+     /*  public ActionResult Edit(int id)
         {
             return Content("id=" + id);
 
@@ -29,8 +31,8 @@ namespace Platforma.Controllers
                 sortBy = "Name";
             return Content(String.Format("pageIndex = {0} &sortBy= {1}", pageIndex, sortBy));
 
-        }
-        public ActionResult ByReleaseDate(int year, int month)
+        }*/
+        public ActionResult ByReleaseYear(int year, int month)
         {
             return Content(year + "/" + month);
         }

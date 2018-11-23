@@ -11,13 +11,10 @@ namespace Platforma
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+     
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "MoviesByrelease Date",
-                "movies/released/{year}/{month}",
-                new { controller = "Movies", action = "ByReleaseDate" },
-                new { year = @"2017|2018", month = @"\d{2}" }); // /d - digit, zapis @"\ jeest równowazny "\\
+            routes.MapMvcAttributeRoutes(); // Aktywacja mechanizmu routingu na bazie atrybutów. Od teraz reguły można umieszczać bezpośrednio w kontrolerach.
 
             routes.MapRoute(
                 name: "Default",
