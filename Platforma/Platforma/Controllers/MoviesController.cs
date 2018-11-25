@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Platforma.Models; // Żeby mieć moliwość wywoływania z klas modelu
+using Platforma.ViewModel;
 
 namespace Platforma.Controllers
 {
@@ -13,7 +14,19 @@ namespace Platforma.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Terminator" }; // Użycie pola Name z Models/Movie dzięki using Platforma.Models
-            return View(movie);
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Cust1"},
+                new Customer { Name = "Cust2"}
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+           // ViewData["Movie"] = movie;
+            return View(viewModel);
         }
 
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]  //Reguła routingu pisana w nowy sposób
