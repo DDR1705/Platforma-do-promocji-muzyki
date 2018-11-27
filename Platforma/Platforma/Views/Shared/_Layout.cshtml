@@ -1,4 +1,4 @@
-﻿@model Platforma.ViewModel.RandomMovieViewModel
+﻿@*@model Platforma.ViewModel.RandomMovieViewModel*@
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +10,12 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Partial("_NavAar")
+    @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year — moja aplikacja platformy ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year — VideoStore</p>
         </footer>
     </div>
 
