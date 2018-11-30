@@ -11,6 +11,6 @@ namespace VideoStore.Models
         public short SingUpFee { get; set; }
         public byte DurationInMonths { get; set; }
         public byte DiscountRate { get; set; }
-        public byte MembershipTypeId { get; set; }
+        
     }
 }
