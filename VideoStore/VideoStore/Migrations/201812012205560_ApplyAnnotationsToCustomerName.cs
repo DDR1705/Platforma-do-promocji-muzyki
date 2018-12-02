@@ -3,7 +3,7 @@ namespace VideoStore.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ApplyAnnotationstoCustomerName : DbMigration
+    public partial class ApplyAnnotationsToCustomerName : DbMigration
     {
         public override void Up()
         {

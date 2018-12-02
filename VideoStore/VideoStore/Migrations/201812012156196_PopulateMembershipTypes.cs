@@ -3,7 +3,7 @@ namespace VideoStore.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateMembershipMigrations : DbMigration
+    public partial class PopulateMembershipTypes : DbMigration
     {
         public override void Up()
         {
@@ -15,7 +15,6 @@ namespace VideoStore.Migrations
         
         public override void Down()
         {
-       
         }
     }
 }

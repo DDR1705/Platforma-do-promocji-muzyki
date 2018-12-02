@@ -9,8 +9,7 @@ namespace VideoStore.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "VideoStore.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(VideoStore.Models.ApplicationDbContext context)

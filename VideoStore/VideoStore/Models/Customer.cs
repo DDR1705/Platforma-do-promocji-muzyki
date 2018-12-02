@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations; // [Required]
+using System.ComponentModel.DataAnnotations;
 
 namespace VideoStore.Models
 {
@@ -13,7 +13,8 @@ namespace VideoStore.Models
         [StringLength(256)]
         public string Name { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
-        public  MembershipType MembershipType{ get; set; }
+        public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
+        public DateTime? Birthdate { get; set; }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoStore", "VideoStore\VideoStore.csproj", "{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoStore", "VideoStore\VideoStore.csproj", "{8181ECFA-F433-40B2-8142-18C98C128BFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8181ECFA-F433-40B2-8142-18C98C128BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8181ECFA-F433-40B2-8142-18C98C128BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8181ECFA-F433-40B2-8142-18C98C128BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8181ECFA-F433-40B2-8142-18C98C128BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {68CC93E4-7FDE-4FFC-B1FE-765CADEC4F47}
+		SolutionGuid = {3FF43C04-7D4F-4F02-83C5-987CDBA99C1D}
 	EndGlobalSection
 EndGlobal

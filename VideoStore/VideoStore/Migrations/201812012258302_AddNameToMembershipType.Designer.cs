@@ -7,13 +7,13 @@ namespace VideoStore.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateMembershipMigrations : IMigrationMetadata
+    public sealed partial class AddNameToMembershipType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateMembershipMigrations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNameToMembershipType));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811301023014_PopulateMembershipMigrations"; }
+            get { return "201812012258302_AddNameToMembershipType"; }
         }
         
         string IMigrationMetadata.Source

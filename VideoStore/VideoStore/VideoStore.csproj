@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0C9C2D88-25B2-4532-BDB5-DF2301899D4F}</ProjectGuid>
+    <ProjectGuid>{8181ECFA-F433-40B2-8142-18C98C128BFE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -181,40 +181,61 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291457049_InitialCreate.cs" />
-    <Compile Include="Migrations\201811291457049_InitialCreate.Designer.cs">
-      <DependentUpon>201811291457049_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201812012121121_InitialCreate.cs" />
+    <Compile Include="Migrations\201812012121121_InitialCreate.Designer.cs">
+      <DependentUpon>201812012121121_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811301010164_AddIsSubscribedToCustomer.cs" />
-    <Compile Include="Migrations\201811301010164_AddIsSubscribedToCustomer.Designer.cs">
-      <DependentUpon>201811301010164_AddIsSubscribedToCustomer.cs</DependentUpon>
+    <Compile Include="Migrations\201812012138562_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201812012138562_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201812012138562_AddIsSubscribedToCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811301016426_AddMembershipType.cs" />
-    <Compile Include="Migrations\201811301016426_AddMembershipType.Designer.cs">
-      <DependentUpon>201811301016426_AddMembershipType.cs</DependentUpon>
+    <Compile Include="Migrations\201812012147504_AddMembershipType.cs" />
+    <Compile Include="Migrations\201812012147504_AddMembershipType.Designer.cs">
+      <DependentUpon>201812012147504_AddMembershipType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811301023014_PopulateMembershipMigrations.cs" />
-    <Compile Include="Migrations\201811301023014_PopulateMembershipMigrations.Designer.cs">
-      <DependentUpon>201811301023014_PopulateMembershipMigrations.cs</DependentUpon>
+    <Compile Include="Migrations\201812012156196_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201812012156196_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201812012156196_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811301130128_PopulateMembershipMigrations1.cs" />
-    <Compile Include="Migrations\201811301130128_PopulateMembershipMigrations1.Designer.cs">
-      <DependentUpon>201811301130128_PopulateMembershipMigrations1.cs</DependentUpon>
+    <Compile Include="Migrations\201812012205560_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201812012205560_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201812012205560_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811301351348_ApplyAnnotationstoCustomerName.cs" />
-    <Compile Include="Migrations\201811301351348_ApplyAnnotationstoCustomerName.Designer.cs">
-      <DependentUpon>201811301351348_ApplyAnnotationstoCustomerName.cs</DependentUpon>
+    <Compile Include="Migrations\201812012258302_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201812012258302_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201812012258302_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812012304164_SetNameOfMembershipTypes.cs" />
+    <Compile Include="Migrations\201812012304164_SetNameOfMembershipTypes.Designer.cs">
+      <DependentUpon>201812012304164_SetNameOfMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812021200334_SetNameInmembershipTypeToRequired.cs" />
+    <Compile Include="Migrations\201812021200334_SetNameInmembershipTypeToRequired.Designer.cs">
+      <DependentUpon>201812021200334_SetNameInmembershipTypeToRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812021223431_AddBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201812021223431_AddBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201812021223431_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812021249452_AddMovie.cs" />
+    <Compile Include="Migrations\201812021249452_AddMovie.Designer.cs">
+      <DependentUpon>201812021249452_AddMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812021250515_Genres.cs" />
+    <Compile Include="Migrations\201812021250515_Genres.Designer.cs">
+      <DependentUpon>201812021250515_Genres.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\RandomMovieViewModel.cs" />
+    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-darkly.css" />
@@ -273,10 +294,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,23 +318,38 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811291457049_InitialCreate.resx">
-      <DependentUpon>201811291457049_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012121121_InitialCreate.resx">
+      <DependentUpon>201812012121121_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301010164_AddIsSubscribedToCustomer.resx">
-      <DependentUpon>201811301010164_AddIsSubscribedToCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012138562_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201812012138562_AddIsSubscribedToCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301016426_AddMembershipType.resx">
-      <DependentUpon>201811301016426_AddMembershipType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012147504_AddMembershipType.resx">
+      <DependentUpon>201812012147504_AddMembershipType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301023014_PopulateMembershipMigrations.resx">
-      <DependentUpon>201811301023014_PopulateMembershipMigrations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012156196_PopulateMembershipTypes.resx">
+      <DependentUpon>201812012156196_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301130128_PopulateMembershipMigrations1.resx">
-      <DependentUpon>201811301130128_PopulateMembershipMigrations1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012205560_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201812012205560_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301351348_ApplyAnnotationstoCustomerName.resx">
-      <DependentUpon>201811301351348_ApplyAnnotationstoCustomerName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812012258302_AddNameToMembershipType.resx">
+      <DependentUpon>201812012258302_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812012304164_SetNameOfMembershipTypes.resx">
+      <DependentUpon>201812012304164_SetNameOfMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812021200334_SetNameInmembershipTypeToRequired.resx">
+      <DependentUpon>201812021200334_SetNameInmembershipTypeToRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812021223431_AddBirthdateToCustomer.resx">
+      <DependentUpon>201812021223431_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812021249452_AddMovie.resx">
+      <DependentUpon>201812021249452_AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812021250515_Genres.resx">
+      <DependentUpon>201812021250515_Genres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -330,9 +368,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50175</DevelopmentServerPort>
+          <DevelopmentServerPort>54465</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50175/</IISUrl>
+          <IISUrl>http://localhost:54465/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -12,7 +12,6 @@ namespace VideoStore
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapMvcAttributeRoutes(); // Aktywacja mechanizmu routingu na bazie atrybutów. Od teraz reguły można umieszczać bezpośrednio w kontrolerach.
 
             routes.MapRoute(
                 name: "Default",
