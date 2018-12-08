@@ -34,6 +34,17 @@ namespace VideoStore.Controllers
         [HttpPost]           // Zawsze gdy zapisujemy do bazy                                        
         public ActionResult Save(Customer customer) //Model binding. 
         {
+            if(!ModelState.IsValid)     //validation
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+
+                };
+                return View("CustomerForm", viewModel);
+
+            }
             if(customer.Id == 0 )
                 _context.Customers.Add(customer); //Nie dodaje do bazy , jest tylko w pamięci
             else
