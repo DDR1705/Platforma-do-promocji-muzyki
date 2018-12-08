@@ -28,7 +28,26 @@ namespace VideoStore.Controllers
             {
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
+        }
+
+        [HttpPost]           // Zawsze gdy zapisujemy do bazy                                        
+        public ActionResult Save(Customer customer) //Model binding. 
+        {
+            if(customer.Id == 0 )
+                _context.Customers.Add(customer); //Nie dodaje do bazy , jest tylko w pamięci
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                //Za pomocą mappera byla by to jedna linia zamiast 4 Mapper.Map(customer, customerInDb)
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            }
+            _context.SaveChanges(); //To już zapisuje
+            return RedirectToAction("Index", "Customers");
         }
 
         public ViewResult Index()
@@ -43,6 +62,20 @@ namespace VideoStore.Controllers
             if (customer == null)
                 return HttpNotFound();
             return View(customer);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", viewModel);
         }
       /*  private IEnumerable<Customer> GetCustomers()
         {
