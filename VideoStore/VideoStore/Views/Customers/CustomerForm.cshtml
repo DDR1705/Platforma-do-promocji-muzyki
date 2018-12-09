@@ -1,4 +1,4 @@
-﻿
+﻿@System.Web.Optimization.Styles.Render("~/Content/css")
 @model VideoStore.ViewModels.NewCustomerViewModel
 @{
     ViewBag.Title = "New";
@@ -41,4 +41,9 @@
     //ukryte pole ID. Na końcu żeby było wiadomo gdzie jest. Potrzebne do ActionResult Save
     @Html.HiddenFor(m => m.Customer.Id)
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/ bundles / jqueryval")
 }
