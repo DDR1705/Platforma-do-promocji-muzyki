@@ -33,7 +33,8 @@ namespace VideoStore.Controllers
             return View("CustomerForm", viewModel);
         }
 
-        [HttpPost]           // Zawsze gdy zapisujemy do bazy                                        
+        [HttpPost]           // Zawsze gdy zapisujemy do bazy             
+        [ValidateAntiForgeryToken] //zabezpieczenie przed atakami 
         public ActionResult Save(Customer customer) //Model binding. 
         {
             if(!ModelState.IsValid)     //validation
