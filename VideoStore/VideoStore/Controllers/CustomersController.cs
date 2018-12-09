@@ -26,6 +26,8 @@ namespace VideoStore.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new NewCustomerViewModel
             {
+                Customer = new Customer(), // Podczas wypisywania listy błędów nie będzie informacji o błędnym Id użytkownika(
+                                            //id wtedy jest pustym stringiem, mvc nie wie wiec jak to traktować 
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm", viewModel);
