@@ -26,7 +26,7 @@ namespace VideoStore.Controllers
         // GET: Movies
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
+            var movies = _context.Movies.Include(m => m.Genre).ToList(); //Eager loading
             return View(movies);
         }
 
@@ -46,7 +46,6 @@ namespace VideoStore.Controllers
                 return HttpNotFound();
             var viewModel = new MovieFormViewModel(movie)
             {
-           
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);

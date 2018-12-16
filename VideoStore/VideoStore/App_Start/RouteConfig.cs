@@ -13,6 +13,8 @@ namespace VideoStore
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes(); //Routing na bazie atrybutów
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
