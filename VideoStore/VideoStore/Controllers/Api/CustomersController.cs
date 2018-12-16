@@ -62,7 +62,7 @@ namespace VideoStore.Controllers.API
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if(customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                throw new HttpResponseException(HttpStatusCode.NotFound);
 
             customerInDb.Name = customer.Name;
             customerInDb.Birthdate = customer.Birthdate;
@@ -75,13 +75,13 @@ namespace VideoStore.Controllers.API
 
         //DELETE /api/customers/1
         [HttpDelete]
-        [Route("api/PostsLikes/{id}")]
+       // [Route("api/PostsLikes/{id}")]
         public void DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                throw new HttpResponseException(HttpStatusCode.NotFound);
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
