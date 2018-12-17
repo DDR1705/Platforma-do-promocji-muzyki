@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
+//using System.Net;
 using System.Web.Http;
 using VideoStore.Dtos;
 using VideoStore.Models;
@@ -11,9 +10,6 @@ using VideoStore.Models;
 namespace VideoStore.Controllers.API
 {
 
-
-
-    
     public class CustomersController : ApiController
     {
 
@@ -24,29 +20,34 @@ namespace VideoStore.Controllers.API
             _context = new ApplicationDbContext();
         }
 
-        //HET /api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        //GET /api/customers
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            var customerDtos = _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            return Ok(customerDtos);
 
         }
         
         //GET /api/customers/1
-        public CustomerDto GetCustomer (int id)
+        public IHttpActionResult GetCustomer (int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return Mapper.Map<Customer, CustomerDto>(customer);
+            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
+        
+
 
         //POST /api/customers
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+                //throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
@@ -54,20 +55,22 @@ namespace VideoStore.Controllers.API
 
             customerDto.Id = customer.Id;
 
-            return customerDto;
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
         }
 
         // PUT /api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, CustomerDto customerDto)
+        public IHttpActionResult UpdateCustomer (int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+                //throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if(customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customerInDb == null)
+                return NotFound();
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
 
             Mapper.Map(customerDto, customerInDb);
             //lub     Mapper.Map<CustomerDto, Customer>(customerDto, customerInDb);
@@ -79,20 +82,24 @@ namespace VideoStore.Controllers.API
 
             _context.SaveChanges();
 
+            return Ok();
         }
 
         //DELETE /api/customers/1
         [HttpDelete]
        // [Route("api/PostsLikes/{id}")]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
+
+            return Ok();
         }
     }
 
