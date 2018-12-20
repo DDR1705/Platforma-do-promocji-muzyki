@@ -26,8 +26,7 @@ namespace VideoStore.Controllers
         // GET: Movies
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList(); //Eager loading
-            return View(movies);
+            return View();
         }
 
         public ViewResult New()

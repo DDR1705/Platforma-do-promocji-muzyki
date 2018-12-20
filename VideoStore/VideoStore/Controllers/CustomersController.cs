@@ -64,6 +64,7 @@ namespace VideoStore.Controllers
             return RedirectToAction("Index", "Customers");
         }
 
+        
         public ViewResult Index()
         {
             return View();
