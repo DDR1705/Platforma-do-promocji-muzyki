@@ -13,7 +13,7 @@ namespace VideoStore.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812201514382_SeedUsers"; }
+            get { return "201812221100242_SeedUsers"; }
         }
         
         string IMigrationMetadata.Source
