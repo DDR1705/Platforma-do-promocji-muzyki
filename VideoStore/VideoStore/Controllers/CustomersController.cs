@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using VideoStore.Models;
 using System.Data.Entity;
 using VideoStore.ViewModels;
+using System.Runtime.Caching;
+using System.Collections.Generic;
 
 namespace VideoStore.Controllers
 {
@@ -67,6 +66,13 @@ namespace VideoStore.Controllers
         
         public ViewResult Index()
         {
+            if(MemoryCache.Default["Genres"] == null)
+            {
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
             return View();
         }
         public ActionResult Details(int id)
