@@ -26,7 +26,7 @@ namespace VideoStore.Models
             return userIdentity;
         }
     }
-
+    /*
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     { 
         public DbSet<Customer> Customers { get; set; }
@@ -43,5 +43,5 @@ namespace VideoStore.Models
         {
             return new ApplicationDbContext();
         }
-    }
+    }*/
 }
