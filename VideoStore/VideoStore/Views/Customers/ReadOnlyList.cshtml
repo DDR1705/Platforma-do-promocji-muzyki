@@ -1,0 +1,35 @@
+﻿@using VideoStore.Models
+@model IEnumerable<VideoStore.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>No permission. Log in as administrator.</h2>
+<p>
+   @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+</p>
+
+@*@section scripts
+ {
+    <script>
+         $(document).ready(function () {
+             var table = $("#movies").DataTable({
+                 ajax: {
+                     url: "/api/movies",
+                     dataSrc: ""
+                 },
+                 columns: [
+                     {
+                         data: "name"
+                         
+                     },
+                     {
+                         data: "genre.name"
+                     },
+                    
+                     
+                 ]
+             });
+  
+         });
+    </script>*@

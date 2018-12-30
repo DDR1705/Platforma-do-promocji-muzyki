@@ -70,10 +70,20 @@ namespace VideoStore.Controllers
             {
                 MemoryCache.Default["Genres"] = _context.Genres.ToList();
             }
+            else
+            {
+           
+            if (User.IsInRole(RoleName.CanManageMovies))
+                    return View("Index");
+
+                return View("ReadOnlyList");
+            }
 
             var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
 
             return View();
+
+            
         }
         public ActionResult Details(int id)
         {

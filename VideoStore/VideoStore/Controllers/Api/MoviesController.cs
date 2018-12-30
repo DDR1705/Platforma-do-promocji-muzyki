@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Data.Entity;
 using VideoStore.Dtos;
 using VideoStore.Models;
+
 namespace VideoStore.Controllers.Api
 {
     public class MoviesController : ApiController
@@ -44,6 +45,7 @@ namespace VideoStore.Controllers.Api
             _context.Movies.Add(movie);
             _context.SaveChanges();
             movieDto.Id = movie.Id;
+          
             return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
         }
         [HttpPut]

@@ -114,7 +114,8 @@
                     })
                     .fail(function () {
                         toastr.error("Something unexpected happened.")
-                    });
+                        });
+                    return false;
                 }
             });
            
