@@ -4,32 +4,39 @@
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>No permission. Log in as administrator.</h2>
-<p>
-   @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-</p>
+<h2>Movies</h2>
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
 
-@*@section scripts
+
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts
  {
     <script>
-         $(document).ready(function () {
-             var table = $("#movies").DataTable({
-                 ajax: {
-                     url: "/api/movies",
-                     dataSrc: ""
-                 },
-                 columns: [
-                     {
-                         data: "name"
-                         
-                     },
-                     {
-                         data: "genre.name"
-                     },
-                    
-                     
-                 ]
-             });
-  
-         });
-    </script>*@
+        $(document).ready(function () {
+            var table = $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name"
+
+                    },
+                    {
+                        data: "membershipType.name"
+                    },
+                
+                ]
+            });
+
+        });
+    </script>
+}

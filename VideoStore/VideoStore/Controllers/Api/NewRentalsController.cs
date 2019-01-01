@@ -4,7 +4,7 @@ using System.Web.Http;
 using VideoStore.Dtos;
 using VideoStore.Models;
 
-namespace Vidly.Controllers.Api
+namespace VideoStore.Controllers.Api
 {
     public class NewRentalsController : ApiController
     {
